@@ -1,13 +1,15 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { View, TextInput, Button, FlatList, Text } from 'react-native';
-import useCarList from '../hooks/useCarList';
+import { FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import CarCard from '../components/CarCard';
+import useCarList from '../hooks/useCarList';
 
 const Search = () => {
   const [query, setQuery] = useState('');
   const { cars } = useCarList();
-  
-  const filteredCars = cars.filter(car => 
+  const navigation = useNavigation<any>();
+
+  const filteredCars = cars.filter(car =>
     (car.name || '').toLowerCase().includes(query.toLowerCase())
   );
 
@@ -23,12 +25,18 @@ const Search = () => {
           borderWidth: 1,
           marginBottom: 16,
           paddingHorizontal: 8,
+          borderRadius: 8,
+          backgroundColor: '#fff',
         }}
       />
       <FlatList
         data={filteredCars}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <CarCard car={item} onPress={() => {}} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => navigation.navigate('CarDetails', { car: item })}>
+            <CarCard car={item} />
+          </TouchableOpacity>
+        )}
         ListEmptyComponent={<Text>No cars found.</Text>}
       />
     </View>

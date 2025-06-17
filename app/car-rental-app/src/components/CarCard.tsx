@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 interface CarCardProps {
   car: {
@@ -9,48 +9,52 @@ interface CarCardProps {
     price: number;
     description: string;
   };
-  onPress: () => void;
 }
 
-const CarCard: React.FC<CarCardProps> = ({ car, onPress }) => {
-  return (
-    <TouchableOpacity style={styles.card} onPress={onPress}>
-      <Image source={{ uri: car.image }} style={styles.image} />
-      <View style={styles.details}>
-        <Text style={styles.name}>{car.name}</Text>
-        <Text style={styles.price}>${car.price}/day</Text>
-        <Text style={styles.description}>{car.description}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
+const CarCard: React.FC<CarCardProps> = ({ car }) => (
+  <View style={styles.card}>
+    <Image source={{ uri: car.image }} style={styles.image} />
+    <View style={styles.details}>
+      <Text style={styles.name}>{car.name}</Text>
+      <Text style={styles.price}>${car.price}/day</Text>
+      <Text style={styles.description}>{car.description}</Text>
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 16,
     overflow: 'hidden',
-    marginBottom: 16,
-    elevation: 3,
+    margin: 8,
+    width: 220,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
   },
   image: {
     width: '100%',
-    height: 150,
+    height: 120,
   },
   details: {
-    padding: 10,
+    padding: 12,
   },
   name: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#222',
   },
   price: {
     fontSize: 16,
-    color: '#888',
+    color: '#007AFF',
+    marginVertical: 4,
   },
   description: {
-    fontSize: 14,
-    color: '#555',
+    fontSize: 13,
+    color: '#666',
   },
 });
 
