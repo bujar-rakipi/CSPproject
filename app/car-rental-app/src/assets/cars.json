@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Tesla Model 3",
+    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3-model3.jpg",
+    "price": 120,
+    "description": "Electric, 2022, 300km range"
+  },
+  {
+    "id": "2",
+    "name": "BMW 5 Series",
+    "image": "https://www.bmw.com/content/dam/bmw/common/all-models/5-series/sedan/2020/at-a-glance/bmw-5-series-sedan-at-a-glance-01.jpg",
+    "price": 100,
+    "description": "Luxury, 2021, Automatic"
+  }
+]
