@@ -32,9 +32,11 @@ const Home = () => {
       data={cars}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('CarDetails', { car: item })}>
-          <CarCard car={item} />
-        </TouchableOpacity>
+        <View style={{ width: '100%', marginVertical: 8 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('CarDetails', { car: item })}>
+            <CarCard car={item} style={{ width: '100%', height: 140 }} />
+          </TouchableOpacity>
+        </View>
       )}
       ListHeaderComponent={
         <>
@@ -57,11 +59,16 @@ const Home = () => {
             showsHorizontalScrollIndicator={false}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-              <TouchableOpacity onPress={() => navigation.navigate('CarDetails', { car: item })}>
-                <CarCard car={item} />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('CarDetails', { car: item })}
+                activeOpacity={0.85}
+                style={styles.featuredCardWrapper}
+              >
+                <CarCard car={item} style={styles.featuredCard} />
               </TouchableOpacity>
             )}
-            contentContainerStyle={{ paddingBottom: 16 }}
+            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+            contentContainerStyle={{ paddingBottom: 16, paddingLeft: 4, paddingRight: 4 }}
           />
           <Text style={styles.sectionTitle}>All Cars</Text>
         </>
@@ -81,6 +88,8 @@ const styles = StyleSheet.create({
   statNumber: { fontSize: 20, fontWeight: 'bold', color: '#007AFF' },
   statLabel: { fontSize: 14, color: '#888' },
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginVertical: 10 },
+  featuredCardWrapper: { padding: 4 },
+  featuredCard: { width: 250, height: 140 },
 });
 
 export default Home;

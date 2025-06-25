@@ -1,16 +1,12 @@
 [
-  {
-    "id": "1",
-    "name": "Tesla Model 3",
-    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/3-model3.jpg",
-    "price": 120,
-    "description": "Electric, 2022, 300km range"
-  },
-  {
-    "id": "2",
-    "name": "BMW 5 Series",
-    "image": "https://www.bmw.com/content/dam/bmw/common/all-models/5-series/sedan/2020/at-a-glance/bmw-5-series-sedan-at-a-glance-01.jpg",
-    "price": 100,
-    "description": "Luxury, 2021, Automatic"
-  }
+  { "id": "1", "name": "Tesla Model S", "image": "https://tesla.com/model-s.jpg", "price": 120, "description": "Electric luxury sedan." },
+  { "id": "2", "name": "BMW 3 Series", "image": "https://bmw.com/3-series.jpg", "price": 90, "description": "Sporty and comfortable." },
+  { "id": "3", "name": "Audi A4", "image": "https://audi.com/a4.jpg", "price": 95, "description": "Premium compact sedan." },
+  { "id": "4", "name": "Mercedes C-Class", "image": "https://mercedes.com/c-class.jpg", "price": 100, "description": "Luxury and performance." },
+  { "id": "5", "name": "Toyota Corolla", "image": "https://toyota.com/corolla.jpg", "price": 50, "description": "Reliable and efficient." },
+  { "id": "6", "name": "Honda Civic", "image": "https://honda.com/civic.jpg", "price": 55, "description": "Popular compact car." },
+  { "id": "7", "name": "Ford Mustang", "image": "https://ford.com/mustang.jpg", "price": 110, "description": "Iconic American muscle." },
+  { "id": "8", "name": "Chevrolet Camaro", "image": "https://chevrolet.com/camaro.jpg", "price": 105, "description": "Bold and powerful." },
+  { "id": "9", "name": "Volkswagen Golf", "image": "https://vw.com/golf.jpg", "price": 60, "description": "Versatile hatchback." },
+  { "id": "10", "name": "Hyundai Elantra", "image": "https://hyundai.com/elantra.jpg", "price": 52, "description": "Modern and efficient." }
 ]

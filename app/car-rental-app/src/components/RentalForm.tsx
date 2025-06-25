@@ -8,7 +8,6 @@ const RentalForm = () => {
   const [returnDate, setReturnDate] = useState('');
 
   const handleSubmit = () => {
-    // Handle form submission logic here
     console.log('Rental Details:', { name, email, pickupDate, returnDate });
   };
 

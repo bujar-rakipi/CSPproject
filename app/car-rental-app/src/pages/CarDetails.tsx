@@ -1,12 +1,6 @@
 import React from 'react';
-import { View, Text, Image, Button, StyleSheet } from 'react-native';
-
-type Car = {
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-};
+import { View, Text, Image, Button, StyleSheet, Alert } from 'react-native';
+import { Car } from '../components/Car'; 
 
 type CarDetailsProps = {
   route: {
@@ -19,13 +13,21 @@ type CarDetailsProps = {
 const CarDetails: React.FC<CarDetailsProps> = ({ route }) => {
   const { car } = route.params;
 
+  const handleRentNow = () => {
+    Alert.alert(
+      'Rental Confirmed',
+      `You have rented ${car.name} for $${car.price} per day.`,
+      [{ text: 'OK' }]
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Image source={{ uri: car.image }} style={styles.image} />
       <Text style={styles.title}>{car.name}</Text>
       <Text style={styles.description}>{car.description}</Text>
       <Text style={styles.price}>${car.price} per day</Text>
-      <Button title="Rent Now" onPress={() => {/* Handle rental logic */}} />
+      <Button title="Rent Now" onPress={handleRentNow} />
     </View>
   );
 };

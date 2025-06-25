@@ -1,20 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import { Car } from '../components/Car';
 import CarDetails from '../pages/CarDetails';
 import Home from '../pages/Home';
 import MyRentals from '../pages/MyRentals';
 import Search from '../pages/Search';
-
-export type Car = {
-  id: string;
-  name: string;
-  image: string;
-  price: number;
-  description: string;
-};
 
 export type RootStackParamList = {
   Tabs: undefined;

@@ -16,16 +16,15 @@ const SwipeableCarCard: React.FC<SwipeableCarCardProps> = ({ car, onSwipeLeft, o
   const panResponder = React.useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: (evt, gestureState) => {
-        return Math.abs(gestureState.dx) > 20; // Threshold for swipe
+        return Math.abs(gestureState.dx) > 20; 
       },
       onPanResponderMove: (evt, gestureState) => {
-        // Handle swipe movement
       },
       onPanResponderRelease: (evt, gestureState) => {
         if (gestureState.dx > 50) {
-          onSwipeRight(); // Swipe right action
+          onSwipeRight(); 
         } else if (gestureState.dx < -50) {
-          onSwipeLeft(); // Swipe left action
+          onSwipeLeft(); 
         }
       },
     })
